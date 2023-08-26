@@ -501,8 +501,8 @@ viewport.addChild(createBckgroundFrame());
 viewport.sortableChildren = true;
 
 const queryString = new URLSearchParams(window.location.search);
-const mapID = Number.parseInt(queryString.get("mapID") || "100000000");
-const clientVer = queryString.get("ver") || "CMST-193";
+const mapID = Number.parseInt(queryString.get("mapID") || "100000000");  // <- change to your own
+const clientVer = queryString.get("ver") || "CMST-193";                  // <- change to your own
 const baseUrl = new URL(`./${clientVer}/`, window.location.href);
 
 PIXI.Ticker.shared.autoStart = false;

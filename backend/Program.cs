@@ -6,14 +6,15 @@ class Program {
     public static void Main(string[] args) {
         Wz_Structure wzs = new();
         wzs.WzVersionVerifyMode = WzVersionVerifyMode.Fast;
-        string baseWzFolder = @"C:\Maplestory\Data\Base";
-        string frontendPublicDir = @".\public";
-        
+        string baseWzFolder = @"C:\Maplestory\Data\Base";  // <- change to your own
+        string frontendPublicDir = @".\public";            // <- change to your own
+        string wzRegion = "CMST";                          // <- change to your own
+
         try {
             wzs.LoadWzFolder(baseWzFolder, ref wzs.WzNode, true);
             int mapID = 100000000;
             int wzVersion = wzs.wz_files[0].Header.WzVersion;
-            string outputDir = @$"{frontendPublicDir}\{wzVersion}";
+            string outputDir = @$"{frontendPublicDir}\{wzRegion}-{wzVersion}";
             Wz_Node mapImgNode = wzs.WzNode.FindNodeByPath(true, "Map", "Map", $"Map{mapID / 100000000}", $"{mapID}.img");
 
             // Load map manifest
