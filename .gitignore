@@ -128,3 +128,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# all generated files in project
+.vs/
+.vscode/
+frontend/public/
+backend/bin/
+backend/obj/
